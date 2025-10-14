@@ -9,9 +9,7 @@ const {
 
 const pool = require("./db"); // MySQL connection (db.js)
 
-// -------------------
 // Book Type
-// -------------------
 const BookType = new GraphQLObjectType({
   name: "Book",
   fields: () => ({
@@ -21,9 +19,7 @@ const BookType = new GraphQLObjectType({
   }),
 });
 
-// -------------------
 // Root Query
-// -------------------
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -47,9 +43,7 @@ const RootQuery = new GraphQLObjectType({
   },
 });
 
-// -------------------
 // Mutations (CRUD)
-// -------------------
 const Mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
@@ -114,9 +108,7 @@ const Mutation = new GraphQLObjectType({
   },
 });
 
-// -------------------
 // Export Schema
-// -------------------
 module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation,
